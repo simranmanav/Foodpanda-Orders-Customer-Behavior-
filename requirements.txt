@@ -1,0 +1,124 @@
+# ==============================================================================
+# requirements.txt
+# ==============================================================================
+# Project  : Foodpanda Data Analysis Dashboard
+# File     : SimranManav_FoodpandaAnalysis.py
+# Run with : streamlit run SimranManav_FoodpandaAnalysis.py
+# ==============================================================================
+#
+# DESCRIPTION
+# -----------
+# An end-to-end interactive data analysis dashboard built with Streamlit and
+# Plotly. The project loads a cleaned Foodpanda orders dataset, performs data
+# quality checks, computes grouped summary statistics, renders 14 interactive
+# charts, and derives actionable business insights and recommendations.
+#
+# PROJECT STRUCTURE
+# -----------------
+#   SimranManav_FoodpandaAnalysis.py              Main Streamlit application (single file)
+#   Foodpanda_Cleaned_Dataset.csv Cleaned dataset used by the app
+#   Foodpanda Analysis Dataset.csv Original raw dataset
+#   requirements.txt              This file
+#
+# DATASET
+# -------
+#   File    : Foodpanda_Cleaned_Dataset.csv
+#   Rows    : 6,000
+#   Columns : 21
+#     customer_id, gender, age, city, signup_date, order_id, order_date,
+#     restaurant_name, dish_name, category, quantity, price, payment_method,
+#     order_frequency, last_order_date, loyalty_points, churned, rating,
+#     rating_date, delivery_status, revenue
+#
+# DASHBOARD TABS
+# --------------
+#   Tab 1 - Overview        : KPI cards, dataset preview, column descriptions
+#   Tab 2 - Data Quality    : Missing values, duplicates, range validation,
+#                             categorical checks, date integrity, box plots
+#   Tab 3 - Summary Stats   : Dynamic group-by aggregations, pivot tables,
+#                             descriptive statistics
+#   Tab 4 - Charts          : 14 Plotly charts (bar, pie, scatter, heatmap,
+#                             box, histogram)
+#   Tab 5 - Business Insights: Key findings, strategic recommendations,
+#                             decision scorecard
+#
+# SIDEBAR FILTERS
+# ---------------
+#   All tabs respond dynamically to:
+#     - City           (Peshawar, Multan, Lahore, Karachi, Islamabad)
+#     - Restaurant     (McDonald's, KFC, Pizza Hut, Subway, Burger King)
+#     - Food Category  (Italian, Fast Food, Chinese, Continental, Dessert)
+#     - Customer Status (Active / Inactive)
+#
+# ==============================================================================
+# PYTHON VERSION
+# ==============================================================================
+#
+#   Requires Python >= 3.10
+#   Tested on  Python  3.12
+#
+# ==============================================================================
+# DEPENDENCIES
+# ==============================================================================
+
+# -- Web Framework & UI --------------------------------------------------------
+# Streamlit: Builds the interactive web dashboard, handles tabs, sidebar,
+# widgets, caching (@st.cache_data), and all UI rendering.
+streamlit>=1.35.0
+
+# -- Data Manipulation ---------------------------------------------------------
+# Pandas: Loads the CSV, parses dates, applies filters, performs group-by
+# aggregations, builds pivot tables, and computes descriptive statistics.
+pandas>=2.0.0
+
+# -- Visualisation -------------------------------------------------------------
+# Plotly: Renders all 14 interactive charts (bar, pie/donut, scatter, heatmap,
+# box plot, histogram). Uses plotly.express for high-level charts and
+# plotly.graph_objects + plotly.subplots for custom multi-panel figures.
+plotly>=5.20.0
+
+# -- Numerical Computing -------------------------------------------------------
+# NumPy: Used internally by Pandas and Plotly for numerical operations,
+# array handling, and statistical computations.
+numpy>=1.26.0
+
+# ==============================================================================
+# INSTALLATION
+# ==============================================================================
+#
+#   pip install -r requirements.txt
+#
+# Or install individually:
+#
+#   pip install streamlit>=1.35.0
+#   pip install pandas>=2.0.0
+#   pip install plotly>=5.20.0
+#   pip install numpy>=1.26.0
+#
+# ==============================================================================
+# HOW TO RUN
+# ==============================================================================
+#
+#   1. Make sure the dataset file is in the same folder as SimranManav_FoodpandaAnalysis.py:
+#        Foodpanda_Cleaned_Dataset.csv
+#
+#   2. Install dependencies:
+#        pip install -r requirements.txt
+#
+#   3. Launch the dashboard:
+#        streamlit run SimranManav_FoodpandaAnalysis.py
+#
+#   4. The app will open automatically in your browser at:
+#        http://localhost:8501
+#
+# ==============================================================================
+# INSTALLED VERSIONS (tested environment)
+# ==============================================================================
+#
+#   streamlit == 1.64.0
+#   pandas    == 3.0.6
+#   plotly    == 7.1.0
+#   numpy     == 2.5.3
+#   python    == 3.12
+#
+# ==============================================================================
